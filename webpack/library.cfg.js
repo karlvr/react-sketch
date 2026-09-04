@@ -16,13 +16,27 @@ function containsObject(obj, list) {
   return false;
 }
 
-const externals = [];
+const externals = {
+  react: {
+    root: 'React',
+    commonjs2: 'react',
+    commonjs: 'react',
+    amd: 'react'
+  },
+  'react-dom': {
+    root: 'ReactDOM',
+    commonjs2: 'react-dom',
+    commonjs: 'react-dom',
+    amd: 'react-dom'
+  }
+};
 const internals = ['fabric', 'canvas'];
 
 module.exports = {
   entry: {
     src: './src'
   },
+  externals,
   performance: {
     hints: false
   },
